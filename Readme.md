@@ -1,7 +1,7 @@
 # Readme
 An Emulator for an original 8-bit computer running assembly instructions with similar syntax to intel x86 (notealy simpler). Repository contains both the Emulator and Assembler to compile and run programs. 
 
-Below is an example fizz-buzz program, executed with the command (inside the Emulator directory) `./main ../Programs/Bin/fizz.bin`. The language makes heavy use of the ACC as an intermediary between operations. Thus programs are notably larger than otherwise, yet... it saved a lot of time in implementation, so ¨\_( ._.)_/¨
+Below is an example fizz-buzz program, executed with the command (inside the Emulator directory) `./main ../Programs/Bin/fizz.bin`. The language makes heavy use of the ACC as an intermediary between operations. Thus programs are notably larger than otherwise, yet... it saved a lot of time in implementation, so ¨\\_( .\_.)\_\/¨
 
 ```assembly
 lda 1
