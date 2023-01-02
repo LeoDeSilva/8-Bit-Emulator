@@ -3,6 +3,12 @@ An Emulator for an original 8-bit computer running assembly instructions with si
 
 Below is an example fizz-buzz program, executed with the command (inside the Emulator directory) `./main ../Programs/Bin/fizz.bin`. The language makes heavy use of the ACC as an intermediary between operations. Thus programs are notably larger than otherwise, yet... it saved a lot of time in implementation, so ¨\\_( .\_.)\_\/¨
 
+The `0x` prefix is required when working with hex, and there are 3 addressing modes for memory (0x0000-0xffff): `%`, registers (0x00 - 0xff): `$`, and simple numbers (no prefix). 
+
+The `lda` and `sta` respectively load values into and store values from the ACC. Thus, instead of `add $0x00, 0xA` to add 10 to the value in register `$0x00`, this would be split into `lda $0x0`, `add 0xA`, and `sta $0x0`.
+
+Relative jumps & labels are also included, the former with the prefix `@`, e.g. `@-1` would jump (set the program counter to) to the previous instruction and `@10` the 10th from the jump instruction. Labels are implmented with the syntax `.<label>` and jump calls can be executed to these `jmp .<label>`. They can also be used as entry points to functions `call .<label>` in place of relative addressing or fixex addresses. 
+
 ```assembly
 lda 1
 sta $0 ; initialise loop counter at 1 
