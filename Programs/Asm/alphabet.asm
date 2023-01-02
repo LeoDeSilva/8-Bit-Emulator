@@ -1,0 +1,14 @@
+lda 65
+sta $0
+lda 97
+sta $1
+lda $0
+int 0x02
+add 1 
+sta $0
+lda $1
+int 0x02
+add 1
+sta $1
+cmp 123
+jl @-9

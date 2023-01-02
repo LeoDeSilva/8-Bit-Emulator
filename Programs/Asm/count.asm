@@ -1,0 +1,4 @@
+add 1
+int 0x01
+cmp 0xa
+jne @-3
